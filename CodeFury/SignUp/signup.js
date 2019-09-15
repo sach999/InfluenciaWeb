@@ -10,16 +10,50 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
-$(document).ready(function () {
-
-    $("#influencer-button").click(function () {
-        $("div#influencer-sign-up").fadeIn();
-        $("div#brand-sign-up").hide();
-    });
-
-    $("#brand-button").click(function () {
-        $("div#influencer-sign-up").hide();
-        $("div#brand-sign-up").fadeIn();
-    });
+$(window).on("load", () => {
+    $(".influ").hide();
+    $(".brand").hide();
 });
+
+$(".influencer-button").on("click", function () {
+
+
+});
+
+function influ() {
+    $(".brand").hide();
+    $(".influ").fadeIn();
+    //$(".influencer-button").toggle(".btn");
+}
+
+function brand() {
+    $(".influ").hide();
+    $(".brand").fadeIn();
+}
+
+function signupAsInflu() {
+
+    // var email = document.getElementById("email_field").value;
+    // var password = document.getElementById("password_field").value;
+
+
+    // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   // [START_EXCLUDE]
+    //   if (errorCode == 'auth/weak-password') {
+    //     alert('The password is too weak.');
+    //   } else {
+    //     alert(errorMessage);
+    //   }
+    //   console.log(error);
+    // });
+
+
+
+}
+
+function signupAsBrand() {
+
+}

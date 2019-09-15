@@ -35,12 +35,12 @@
     </div>
 
 
-    <div class="sign-up"> Sign-Up: <br>
-        <button id="influencer-button">Influencer</button>
-        <button id="brand-button">Brand</button>
+    <div class="sign-up">
+        <button id="influencer-button" onclick="influ()" active>Influencer</button>
+        <button id="brand-button" onclick="brand()">Brand</button>
     </div>
 
-    <div id="influencer-sign-up">
+    <!-- <div class="influencer-sign-up">
         <form>
             <fieldset>
                 <legend>Influencer Sign Up</legend>
@@ -55,7 +55,7 @@
         </form><br>
     </div>
 
-    <div id="brand-sign-up">
+    <div class="brand-sign-up">
         <form>
             <fieldset>
                 <legend>Brand Sign Up</legend>
@@ -65,14 +65,31 @@
                 <textarea></textarea>
             </fieldset>
         </form> <br>
+    </div> -->
+
+    <div class="influ">
+
+        <h2>Influencer details: </h2>
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Password">
+        <button onclick="signupAsInflu()">SignUp</button>
+    </div>
+
+    <div class="brand">
+
+        <h2>Brand details: </h2>
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Password">
+        <button onclick="signupAsBrand()">SignUp</button>
+
     </div>
 
 
 
 
-
-
-    <script src="../app.js"></script>
+    <script src="signup.js"></script>
 
 </body>
 
