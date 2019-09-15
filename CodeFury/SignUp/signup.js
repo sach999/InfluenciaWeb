@@ -7,17 +7,11 @@ var firebaseConfig = {
     messagingSenderId: "886560911024",
     appId: "1:886560911024:web:8840b5a9941ef941985575"
 };
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 $(window).on("load", () => {
     $(".influ").hide();
     $(".brand").hide();
-});
-
-$(".influencer-button").on("click", function () {
-
-
 });
 
 function influ() {
@@ -33,27 +27,63 @@ function brand() {
 
 function signupAsInflu() {
 
-    // var email = document.getElementById("email_field").value;
-    // var password = document.getElementById("password_field").value;
+    // TODO: get fields
 
+    email = $("input[type='email']").val();
+    password = $("input[type='password'").val();
 
-    // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-    //   // Handle Errors here.
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   // [START_EXCLUDE]
-    //   if (errorCode == 'auth/weak-password') {
-    //     alert('The password is too weak.');
-    //   } else {
-    //     alert(errorMessage);
-    //   }
-    //   console.log(error);
-    // });
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
 
+            if (errorCode == 'auth/weak-password') {
+                alert('The password is too weak.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+        });
 
+    // TODO get fields and make dict
+    var fields = {}
+
+    fetch('http://localhost:5000/register_influencer', {
+        method: "POST",
+        body: JSON.stringify(fields)
+    })
+        .catch(err => {
+            console.log(err)
+        });
 
 }
 
 function signupAsBrand() {
 
+    email = $("input[type='email']").val();
+    password = $("input[type='password'").val();
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            if (errorCode == 'auth/weak-password') {
+                alert('The password is too weak.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+        });
+
+    // TODO get fields and make dict
+    var fields = {}
+
+    fetch('http://localhost:5000/register_brand', {
+        method: "POST",
+        body: JSON.stringify(fields)
+    })
+        .catch(err => {
+            console.log(err)
+        });
 }
