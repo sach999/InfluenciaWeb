@@ -21,6 +21,14 @@ firebase.auth().onAuthStateChanged(function (user) {
             var email_id = user.email;
             document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 
+            database.collection("compat").get().then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+
+                    console.log(doc);
+
+                });
+            });
+
         }
 
     } else {

@@ -54,9 +54,8 @@ function signupAsInflu() {
 
     // TODO get fields and make dict
 
-    fetch('http://localhost:5000/register_influencer', {
+    fetch(`http://localhost:5000/register_influencer&text=${fields['text']}&influencer_id=${fields['influencer_id']}`, {
         method: "POST",
-        body: JSON.stringify(fields)
     })
         .catch(err => {
             console.log(err)
@@ -87,10 +86,9 @@ function signupAsBrand() {
             }
             console.log(error);
         });
-
-    fetch('http://localhost:5000/register_brand', {
+    window.location = "../pageBrand/brand.html"
+    fetch(`http://localhost:5000/register_brand&text=${fields['text']}&brand_id=${fields['brand_id']}`, {
         method: "POST",
-        body: JSON.stringify(fields)
     })
         .catch(err => {
             console.log(err)
