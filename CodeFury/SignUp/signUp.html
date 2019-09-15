@@ -29,6 +29,7 @@
         </div>
     </div>
 
+    <h3>Are you an influencer or a brand?</h3>
 
     <div class="sign-up">
         <button id="influencer-button" onclick="influ()" active>Influencer</button>
@@ -38,19 +39,23 @@
     <div class="influ">
 
         <h2>Influencer details: </h2>
-        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Name" class="name">
         <input type="email" placeholder="Email">
         <input type="password" placeholder="Password">
-        <input type="text" placeholder="">
+        <input type="text" placeholder="Instagram Link" class="iglink">
+        <input type="text" placeholder="Youtube Link" class="ytlink">
+        <textarea name="" id="" cols="30" rows="10" placeholder="About yourself" class="text"></textarea>
         <button onclick="signupAsInflu()">SignUp</button>
     </div>
 
     <div class="brand">
 
         <h2>Brand details: </h2>
-        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Name" class="name">
         <input type="email" placeholder="Email">
         <input type="password" placeholder="Password">
+        <input type="text" placeholder="Brand Name" class="brand">
+        <textarea name="" id="" cols="30" rows="10" placeholder="Brand details" class="text"></textarea>
         <button onclick="signupAsBrand()">SignUp</button>
 
     </div>

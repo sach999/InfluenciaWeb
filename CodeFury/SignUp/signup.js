@@ -27,11 +27,17 @@ function brand() {
 
 function signupAsInflu() {
 
-    // TODO: get fields
+    var fields = {}
+
+    fields['name'] = document.querySelector(".name").value;
+    fields['iglink'] = document.querySelector(".iglink").value;
+    fields['ytlink'] = document.querySelector(".ytlink").value;
+    fields['text'] = document.querySelector(".text").value;
 
     email = $("input[type='email']").val();
     password = $("input[type='password'").val();
 
+    fields['influencer_id'] = email.split('@')[0]
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .catch(function (error) {
             var errorCode = error.code;
@@ -43,10 +49,10 @@ function signupAsInflu() {
                 alert(errorMessage);
             }
             console.log(error);
+            return;
         });
 
     // TODO get fields and make dict
-    var fields = {}
 
     fetch('http://localhost:5000/register_influencer', {
         method: "POST",
@@ -60,8 +66,14 @@ function signupAsInflu() {
 
 function signupAsBrand() {
 
+    fields['name'] = document.querySelector(".name").value;
+    fields['brandName'] = document.querySelector(".brand").value;
+    fields['text'] = document.querySelector(".text").value;
+
     email = $("input[type='email']").val();
     password = $("input[type='password'").val();
+
+    fields['brand_id'] = email.split("@")[0];
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .catch(function (error) {
@@ -75,9 +87,6 @@ function signupAsBrand() {
             }
             console.log(error);
         });
-
-    // TODO get fields and make dict
-    var fields = {}
 
     fetch('http://localhost:5000/register_brand', {
         method: "POST",
